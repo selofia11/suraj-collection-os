@@ -1,17 +1,16 @@
-Suraj’s Card Vault 2.5.1 — EMBEDDED IMAGE FIX
+Suraj’s Card Vault 2.5.2 HOTFIX
 
-This release fixes the iPhone/GitHub image-upload problem completely.
+This fixes the blank-screen bug in 2.5.1.
 
-What changed:
-- 29 card images are embedded directly inside cards.json.
-- There are NO separate card-*.jpg files to upload.
-- This means GitHub Pages cannot lose the image files or break their paths.
-- Vault Gallery, Crown Jewels and card-detail screens all read the embedded images from the master.
-- Build number shown in the app is 2.5.1.
+Cause:
+- A malformed JavaScript row-renderer slipped into 2.5.1.
+- This stopped app.js from parsing, so the whole site rendered blank.
 
-UPLOAD:
-Upload/replace ONLY the files in this ZIP at the GitHub repo root.
-There is no assets folder and no card image upload step.
+Also fixed:
+- An undefined card-score reference inside Sniper.
 
-Note:
-cards.json is intentionally much larger because it now contains the card photos themselves.
+Images remain embedded directly in cards.json, so there are no separate card image files to upload.
+
+Upload ALL files in this ZIP to the GitHub repo root and replace the current ones.
+After deployment, fully close/reopen the Home Screen app.
+Look for build 2.5.2.
