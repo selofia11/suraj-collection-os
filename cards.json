@@ -1,5 +1,5 @@
 {
-  "version": "2.4.1",
+  "version": "2.5",
   "source": "Suraj_Master_Collection_2026-08-22_Bulletproof_v1.xlsx",
   "spreadsheet_rows": 26,
   "unique_holdings": 33,
@@ -34,7 +34,7 @@
       "current_value": 82.81,
       "previous_value": 82.81,
       "stars": 5,
-      "image": "assets/jude-sapphire-68-psa10.jpg"
+      "image": "card-jude-sapphire-68-psa10.jpg"
     },
     {
       "id": "JB-002",
@@ -64,7 +64,7 @@
       "current_value": 103.66,
       "previous_value": 103.66,
       "stars": 5,
-      "image": "assets/jude-sapphire-sp-68-psa10.jpg"
+      "image": "card-jude-sapphire-sp-68-psa10.jpg"
     },
     {
       "id": "JB-003",
@@ -94,7 +94,7 @@
       "current_value": 52.72,
       "previous_value": 52.72,
       "stars": 4,
-      "image": "assets/jude-stadium-club-54-psa10.jpg"
+      "image": "card-jude-stadium-club-54-psa10.jpg"
     },
     {
       "id": "JB-004",
@@ -124,7 +124,7 @@
       "current_value": 130,
       "previous_value": 130,
       "stars": 5,
-      "image": "assets/jude-purple-wave-32-psa10.jpg"
+      "image": "card-jude-purple-wave-32-psa10.jpg"
     },
     {
       "id": "JB-005",
@@ -154,7 +154,7 @@
       "current_value": 42,
       "previous_value": 42,
       "stars": 4,
-      "image": "assets/jude-aqua-58-psa10.jpg"
+      "image": "card-jude-aqua-58-psa10.jpg"
     },
     {
       "id": "JB-006",
@@ -184,7 +184,7 @@
       "current_value": 55.4,
       "previous_value": 55.4,
       "stars": 4,
-      "image": "assets/jude-pink-58-psa10.jpg"
+      "image": "card-jude-pink-58-psa10.jpg"
     },
     {
       "id": "JB-007",
@@ -214,7 +214,7 @@
       "current_value": 180,
       "previous_value": 180,
       "stars": 5,
-      "image": "assets/jude-pink-xfractor-68-psa10.jpg"
+      "image": "card-jude-pink-xfractor-68-psa10.jpg"
     },
     {
       "id": "JB-008",
@@ -244,7 +244,7 @@
       "current_value": 189.99,
       "previous_value": 189.99,
       "stars": 5,
-      "image": "assets/jude-blue-wave-32-psa10.jpg"
+      "image": "card-jude-blue-wave-32-psa10.jpg"
     },
     {
       "id": "JB-009",
@@ -274,7 +274,7 @@
       "current_value": 65.74,
       "previous_value": 65.74,
       "stars": 4,
-      "image": "assets/jude-finest-refractor-psa10.jpg"
+      "image": "card-jude-finest-refractor-psa10.jpg"
     },
     {
       "id": "JB-010-LEGACY",
@@ -304,7 +304,7 @@
       "current_value": 160,
       "previous_value": 160,
       "stars": 5,
-      "image": "assets/jude-green-refractor-32-psa10.jpg"
+      "image": "card-jude-green-refractor-32-psa10.jpg"
     },
     {
       "id": "LY-001",
@@ -334,7 +334,7 @@
       "current_value": 241,
       "previous_value": 241,
       "stars": 5,
-      "image": "assets/lamine-finest-50-psa10.jpg"
+      "image": "card-lamine-finest-50-psa10.jpg"
     },
     {
       "id": "LY-002",
@@ -364,7 +364,7 @@
       "current_value": 169.7,
       "previous_value": 169.7,
       "stars": 4,
-      "image": "assets/lamine-optic-177-psa10.jpg"
+      "image": "card-lamine-optic-177-psa10.jpg"
     },
     {
       "id": "LY-003",
@@ -394,7 +394,7 @@
       "current_value": 133.45,
       "previous_value": 133.45,
       "stars": 4,
-      "image": "assets/lamine-stadium-club-27-psa10.jpg"
+      "image": "card-lamine-stadium-club-27-psa10.jpg"
     },
     {
       "id": "LY-004",
@@ -484,7 +484,7 @@
       "current_value": 118,
       "previous_value": 118,
       "stars": 4,
-      "image": "assets/lamine-wonderkids-wk1-psa10.jpg"
+      "image": "card-lamine-wonderkids-wk1-psa10.jpg"
     },
     {
       "id": "LY-007",
@@ -541,7 +541,7 @@
       "why": "Iconic rookie insert",
       "thesis": "Adds Deco rookie insert diversity",
       "notes": "Purchased Jul 2026",
-      "image": "assets/lamine-deco-prodigy-raw.jpg",
+      "image": "card-lamine-deco-prodigy-raw.jpg",
       "image_reference": true,
       "current_value": 31.89,
       "previous_value": 31.89,
@@ -575,7 +575,7 @@
       "current_value": 270,
       "previous_value": 270,
       "stars": 4,
-      "image": "assets/lamine-ultimate-stage-usc16-psa10.jpg"
+      "image": "card-lamine-ultimate-stage-usc16-psa10.jpg"
     },
     {
       "id": "LY-008-CHROME",
@@ -605,7 +605,7 @@
       "current_value": 551.2,
       "previous_value": 551.2,
       "stars": 5,
-      "image": "assets/lamine-chrome-64-psa10.jpg"
+      "image": "card-lamine-chrome-64-psa10.jpg"
     },
     {
       "id": "LY-009",
@@ -635,7 +635,7 @@
       "current_value": 421.06,
       "previous_value": 421.06,
       "stars": 5,
-      "image": "assets/lamine-jade-64-psa10.jpg"
+      "image": "card-lamine-jade-64-psa10.jpg"
     },
     {
       "id": "LY-010",
@@ -665,7 +665,7 @@
       "current_value": 630,
       "previous_value": 630,
       "stars": 5,
-      "image": "assets/lamine-sapphire-image-variation-psa10.jpg"
+      "image": "card-lamine-sapphire-image-variation-psa10.jpg"
     },
     {
       "id": "CF-001",
@@ -722,7 +722,7 @@
       "why": "Rare insert",
       "thesis": "Low-numbered rookie insert",
       "notes": "",
-      "image": "assets/flagg-hardwired-22of99-raw.jpg",
+      "image": "card-flagg-hardwired-22of99-raw.jpg",
       "current_value": 115.1,
       "previous_value": 115.1,
       "stars": 5
@@ -755,7 +755,7 @@
       "current_value": 161.34,
       "previous_value": 161.34,
       "stars": 4,
-      "image": "assets/flagg-destiny-psa10.jpg"
+      "image": "card-flagg-destiny-psa10.jpg"
     },
     {
       "id": "VW-001",
@@ -785,7 +785,7 @@
       "thesis": "Low-cost exposure to Wembanyama's Rookie of the Year season.",
       "notes": "",
       "stars": 3,
-      "image": "assets/wemby-topps-now-vw6-raw.jpg"
+      "image": "card-wemby-topps-now-vw6-raw.jpg"
     },
     {
       "id": "BN-001",
@@ -815,7 +815,7 @@
       "thesis": "Speculative quarterback rookie exposure with controlled downside.",
       "notes": "",
       "stars": 3,
-      "image": "assets/bo-nix-red-ice-105-psa10.jpg"
+      "image": "card-bo-nix-red-ice-105-psa10.jpg"
     },
     {
       "id": "CF-004",
@@ -845,7 +845,7 @@
       "thesis": "Low-cost insert exposure alongside the scarcer Hardwired /99 and PSA 10 Destiny.",
       "notes": "",
       "stars": 3,
-      "image": "assets/flagg-levitation-raw.jpg"
+      "image": "card-flagg-levitation-raw.jpg"
     },
     {
       "id": "LY-012",
@@ -875,7 +875,7 @@
       "thesis": "Adds visual and insert diversity to the Yamal rookie portfolio.",
       "notes": "Purchase price not yet recorded.",
       "stars": 3,
-      "image": "assets/lamine-european-nights-raw.jpg"
+      "image": "card-lamine-european-nights-raw.jpg"
     },
     {
       "id": "LY-013",
@@ -905,7 +905,7 @@
       "thesis": "Non-PSA Gem Mint 10; collectible visual appeal but lower liquidity than PSA.",
       "notes": "Grading company not recorded in master.",
       "stars": 3,
-      "image": "assets/lamine-mystic-nights-mn8-gem10.jpg"
+      "image": "card-lamine-mystic-nights-mn8-gem10.jpg"
     },
     {
       "id": "JB-011",
@@ -935,7 +935,7 @@
       "thesis": "Adds an additional PSA 10 Jude rookie insert without duplicating the core Sapphire thesis.",
       "notes": "Purchase price not yet recorded.",
       "stars": 4,
-      "image": "assets/jude-prized-footballers-psa10.jpg"
+      "image": "card-jude-prized-footballers-psa10.jpg"
     },
     {
       "id": "LH-001",
@@ -965,7 +965,7 @@
       "thesis": "Event-driven Hamilton card tied to a milestone moment rather than a base issue.",
       "notes": "14.06.26; purchase price not yet recorded.",
       "stars": 3,
-      "image": "assets/lewis-hamilton-ferrari-first-win-raw.jpg"
+      "image": "card-lewis-hamilton-ferrari-first-win-raw.jpg"
     },
     {
       "id": "KA-001",
@@ -995,7 +995,7 @@
       "thesis": "Milestone-driven rookie-era F1 collectible with event significance.",
       "notes": "15.03.26; purchase price not yet recorded.",
       "stars": 3,
-      "image": "assets/kimi-antonelli-first-win-raw.jpg"
+      "image": "card-kimi-antonelli-first-win-raw.jpg"
     }
   ],
   "sniper": [
@@ -1044,5 +1044,10 @@
     }
   ],
   "source_note": "Master workbook plus user-confirmed scans through 23 Aug 2026.",
-  "live_deals": []
+  "live_deals": [],
+  "release_name": "Gallery & Intelligence",
+  "image_coverage": {
+    "with_user_images": 29,
+    "total_cards": 33
+  }
 }

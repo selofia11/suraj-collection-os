@@ -1,14 +1,16 @@
-Suraj’s Card Vault 2.4.1 FIX
+Suraj’s Card Vault 2.5 — Gallery & Intelligence
 
-This is a corrective release for 2.4.
+Major changes:
+- Fixes image portability by flattening 29 user-supplied card images into the GitHub root.
+- 29/33 master cards now have permanent user-provided images.
+- Vault defaults to a visual Gallery view with real card thumbnails.
+- Gallery/List toggle.
+- Working filters: PSA 10, Rookie, Raw, Numbered, Crown.
+- Sort Vault by Vault Score, value or player.
+- New Vault Score /100 for every card.
+- Player dashboards with tracked value, average Vault Score, PSA 10 count, best holding, and complete image gallery.
+- Insights includes Top 5 holdings by Vault Score and image coverage.
+- Existing Home, vertical Crown Jewels, trends, Sniper/eBay links, Add Card and GitHub export workflow remain.
 
-Fixes:
-- Expand all / Collapse all controls now actually render in Vault.
-- Home Crown Jewels use the new vertical list.
-- Sniper Core Targets includes eBay search links and Live Deals.
-- Build number "2.4.1" is visible under the app title so you can confirm the new files loaded.
-- index.html clears older service workers/caches and loads version-busted CSS/JS to prevent the installed iPhone app showing stale code.
-
-Upload ALL files to the GitHub repo root, preserving assets/.
-After GitHub Pages deploys, fully close and reopen the Home Screen app once.
-You should see "build 2.4.1" under Suraj’s Card Vault.
+IMPORTANT FOR iPHONE GITHUB:
+Every card image is in the ROOT of this ZIP (filenames beginning card-), not inside an assets folder. Upload ALL files to your repository root. This avoids the mobile GitHub folder-upload issue that caused thumbnails not to appear.
