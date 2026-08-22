@@ -1,0 +1,4 @@
+body{margin:0;background:#08111f;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.wrap{padding:20px}.card{background:#111b2b;border:1px solid #d4af37;border-radius:16px;padding:16px;margin:16px 0}
+nav{position:fixed;bottom:0;left:0;right:0;background:#0b1525;display:flex;justify-content:space-around;padding:14px 0}
+button{background:none;border:none;color:#d4af37;font-size:16px}

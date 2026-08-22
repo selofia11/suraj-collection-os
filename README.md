@@ -1,1 +1,2 @@
-# suraj-collection-os
+# Suraj Collection OS
+Starter app.
