@@ -1,1 +1,1 @@
-# Card Vault v4
+Card Vault Pro 1.1 — authoritative collection data from Suraj Master Collection 2026-08-22. Upload all files to GitHub Pages root.

@@ -1,20 +1,24 @@
 {
   "name": "Card Vault",
-  "short_name": "CardVault",
+  "short_name": "Card Vault",
+  "id": "/suraj-collection-os/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "start_url": ".",
-  "background_color": "#050912",
-  "theme_color": "#050912",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
