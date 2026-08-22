@@ -1,1 +1,1 @@
-Card Vault Pro 1.1 — authoritative collection data from Suraj Master Collection 2026-08-22. Upload all files to GitHub Pages root.
+Card Vault Enriched 2.0. Built from the Master Inventory workbook. 26 spreadsheet rows, 25 unique holdings after one duplicate legacy row is removed. Upload all root files + assets folder to GitHub Pages.

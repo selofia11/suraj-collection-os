@@ -1,7 +1,10 @@
 {
-  "version": "1.1",
-  "as_of": "2026-08-22",
-  "currency": "GBP",
+  "version": "2.0",
+  "source": "Suraj_Master_Collection_2026-08-22_Bulletproof_v1.xlsx",
+  "spreadsheet_rows": 26,
+  "unique_holdings": 25,
+  "duplicate_rows_removed": 1,
+  "legacy_records": 2,
   "cards": [
     {
       "id": "JB-001",
@@ -22,8 +25,12 @@
       "moat": 10,
       "importance": 1,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Flagship Sapphire rookie"
+      "target": 10000,
+      "why": "Core rookie",
+      "thesis": "Flagship Sapphire rookie",
+      "notes": ""
     },
     {
       "id": "JB-002",
@@ -44,8 +51,12 @@
       "moat": 10,
       "importance": 2,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Image variation"
+      "target": 10000,
+      "why": "Rare SP",
+      "thesis": "Image variation",
+      "notes": ""
     },
     {
       "id": "JB-003",
@@ -66,8 +77,12 @@
       "moat": 8,
       "importance": 3,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Photography rookie"
+      "target": null,
+      "why": "Photography rookie",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "JB-004",
@@ -88,8 +103,12 @@
       "moat": 9,
       "importance": 4,
       "crown": true,
+      "population": null,
       "serial": "/250",
-      "notes": "Numbered rookie"
+      "target": null,
+      "why": "Numbered rookie",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "JB-005",
@@ -110,7 +129,11 @@
       "moat": 7,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "/199",
+      "target": null,
+      "why": "",
+      "thesis": "",
       "notes": ""
     },
     {
@@ -132,7 +155,11 @@
       "moat": 7,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "/175",
+      "target": null,
+      "why": "",
+      "thesis": "",
       "notes": ""
     },
     {
@@ -154,8 +181,12 @@
       "moat": 9,
       "importance": 5,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Premium rookie"
+      "target": null,
+      "why": "Premium rookie",
+      "thesis": "Pink X-Fractor rookie",
+      "notes": ""
     },
     {
       "id": "JB-008",
@@ -176,8 +207,12 @@
       "moat": 9,
       "importance": 3,
       "crown": true,
+      "population": null,
       "serial": "/150",
-      "notes": "Blue Wave rookie"
+      "target": null,
+      "why": "Numbered rookie",
+      "thesis": "Blue Wave rookie",
+      "notes": ""
     },
     {
       "id": "JB-009",
@@ -198,11 +233,15 @@
       "moat": 8,
       "importance": 6,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "UCL refractor"
+      "target": null,
+      "why": "Finest rookie",
+      "thesis": "UCL refractor",
+      "notes": ""
     },
     {
-      "id": "JB-010",
+      "id": "JB-010-LEGACY",
       "player": "Jude Bellingham",
       "sport": "Football",
       "set": "2020-21 Topps Finest Bundesliga",
@@ -220,8 +259,12 @@
       "moat": 10,
       "importance": null,
       "crown": true,
+      "population": null,
       "serial": "73/99",
-      "notes": "Recovered from legacy row in master workbook"
+      "target": null,
+      "why": "Legacy workbook purchase",
+      "thesis": "Low-numbered rookie",
+      "notes": "Legacy row; cert not recorded in master"
     },
     {
       "id": "LY-001",
@@ -242,8 +285,12 @@
       "moat": 10,
       "importance": 1,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Cornerstone rookie"
+      "target": null,
+      "why": "Cornerstone rookie",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-002",
@@ -264,8 +311,12 @@
       "moat": 8,
       "importance": 2,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Optic rookie"
+      "target": null,
+      "why": "Optic rookie",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-003",
@@ -286,8 +337,12 @@
       "moat": 8,
       "importance": 3,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Premium photography"
+      "target": null,
+      "why": "Premium photography",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-004",
@@ -308,8 +363,12 @@
       "moat": 8,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "International issue"
+      "target": null,
+      "why": "International issue",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-005",
@@ -330,8 +389,12 @@
       "moat": 8,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "Iconic insert"
+      "target": null,
+      "why": "Iconic insert",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-006",
@@ -352,8 +415,12 @@
       "moat": 7,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "Second-year Wonderkids"
+      "target": null,
+      "why": "Second-year Wonderkids",
+      "thesis": "",
+      "notes": ""
     },
     {
       "id": "LY-007",
@@ -374,11 +441,15 @@
       "moat": 6,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "MGC rookie"
+      "target": null,
+      "why": "MGC rookie",
+      "thesis": "",
+      "notes": ""
     },
     {
-      "id": "LY-008A",
+      "id": "LY-008-DECO",
       "player": "Lamine Yamal",
       "sport": "Football",
       "set": "2023-24 Topps Deco UCC",
@@ -396,11 +467,43 @@
       "moat": 7,
       "importance": 8,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "Iconic rookie insert; purchased Jul 2026"
+      "target": null,
+      "why": "Iconic rookie insert",
+      "thesis": "Adds Deco rookie insert diversity",
+      "notes": "Purchased Jul 2026",
+      "image": "assets/lamine-prodigy-reference.jpg",
+      "image_reference": true
     },
     {
-      "id": "LY-008B",
+      "id": "LY-011-LEGACY",
+      "player": "Lamine Yamal",
+      "sport": "Football",
+      "set": "2023-24 Topps UEFA Club Competitions Chrome",
+      "card_no": "#USC16",
+      "parallel": "Ultimate Stage",
+      "year_type": "Rookie",
+      "grade": "10",
+      "grader": "PSA",
+      "cert": "",
+      "paid": 270,
+      "status": "Hold",
+      "tier": "Core",
+      "investment_grade": "A",
+      "conviction": 8.5,
+      "moat": 8,
+      "importance": null,
+      "crown": false,
+      "population": null,
+      "serial": "",
+      "target": null,
+      "why": "Legacy workbook purchase",
+      "thesis": "Ultimate Stage rookie",
+      "notes": "Legacy row; cert not recorded in master"
+    },
+    {
+      "id": "LY-008-CHROME",
       "player": "Lamine Yamal",
       "sport": "Football",
       "set": "2023-24 Topps Chrome UEFA Club Competitions",
@@ -418,8 +521,12 @@
       "moat": 10,
       "importance": 2,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Cornerstone flagship rookie"
+      "target": null,
+      "why": "Flagship Chrome rookie",
+      "thesis": "Cornerstone flagship rookie",
+      "notes": ""
     },
     {
       "id": "LY-009",
@@ -440,8 +547,12 @@
       "moat": 9,
       "importance": 2,
       "crown": true,
+      "population": 208,
       "serial": "",
-      "notes": "PSA pop 208; premium parallel of flagship rookie"
+      "target": null,
+      "why": "Iconic #64 Jade rookie",
+      "thesis": "Premium parallel of flagship rookie",
+      "notes": ""
     },
     {
       "id": "LY-010",
@@ -462,30 +573,12 @@
       "moat": 10,
       "importance": 2,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "$850 all-in; cornerstone Yamal holding"
-    },
-    {
-      "id": "LY-011",
-      "player": "Lamine Yamal",
-      "sport": "Football",
-      "set": "2023-24 Topps UEFA Club Competitions Chrome",
-      "card_no": "USC16",
-      "parallel": "Ultimate Stage",
-      "year_type": "Rookie",
-      "grade": "10",
-      "grader": "PSA",
-      "cert": "",
-      "paid": 270,
-      "status": "Hold",
-      "tier": "Core",
-      "investment_grade": "A",
-      "conviction": 8.5,
-      "moat": 8,
-      "importance": null,
-      "crown": false,
-      "serial": "",
-      "notes": "Recovered from legacy row in master workbook"
+      "target": null,
+      "why": "Premium Sapphire rookie",
+      "thesis": "2023-24 Sapphire Image Variation RC; PSA 10; cornerstone Yamal holding",
+      "notes": "$850 all-in purchase (~\u00a3630)"
     },
     {
       "id": "CF-001",
@@ -506,8 +599,12 @@
       "moat": 6,
       "importance": null,
       "crown": false,
+      "population": null,
       "serial": "",
-      "notes": "Flagship base only"
+      "target": null,
+      "why": "Cheap flagship rookie",
+      "thesis": "Base exposure",
+      "notes": "Holiday removed; flagship base only"
     },
     {
       "id": "CF-002",
@@ -528,8 +625,13 @@
       "moat": 9,
       "importance": 1,
       "crown": true,
+      "population": null,
       "serial": "22/99",
-      "notes": "Low-numbered rookie insert"
+      "target": null,
+      "why": "Rare insert",
+      "thesis": "Low-numbered rookie insert",
+      "notes": "",
+      "image": "assets/flagg-hardwired.jpg"
     },
     {
       "id": "CF-003",
@@ -550,25 +652,32 @@
       "moat": 8,
       "importance": 2,
       "crown": true,
+      "population": null,
       "serial": "",
-      "notes": "Premium PSA 10 insert"
+      "target": null,
+      "why": "Premium PSA 10 insert",
+      "thesis": "Early flagship PSA 10",
+      "notes": ""
     }
   ],
   "sniper": [
     {
-      "target": "Cooper Flagg Topps Chrome /75 or better",
-      "max": 220,
-      "priority": "High"
-    },
-    {
-      "target": "Jude Bellingham 2020 numbered rookie PSA 10",
-      "max": 350,
-      "priority": "High"
-    },
-    {
-      "target": "Lamine Yamal 2023-24 numbered/Sapphire rookie PSA 10",
+      "target": "Lamine 2023-24 Sapphire / numbered flagship rookie PSA 10",
       "max": 900,
-      "priority": "High"
+      "priority": "High",
+      "reason": "Adds scarcity without diluting the Yamal thesis."
+    },
+    {
+      "target": "Jude 2020 numbered rookie PSA 10 /99 or lower",
+      "max": 400,
+      "priority": "High",
+      "reason": "Improves scarcity profile versus year-two color."
+    },
+    {
+      "target": "Cooper Flagg flagship numbered rookie /75 or lower",
+      "max": 225,
+      "priority": "High",
+      "reason": "Raw rare risk bucket; only buy when price leaves grading upside."
     }
   ]
 }

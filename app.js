@@ -1,78 +1,59 @@
 
-const $=s=>document.querySelector(s); let BASE=[], view="home", player=null, activeFilter="All", modal=null;
-const custom=()=>JSON.parse(localStorage.getItem("cv_custom")||"[]");
-const cards=()=>[...BASE,...custom()];
-const fmt=n=>"£"+Number(n||0).toLocaleString("en-GB",{maximumFractionDigits:0});
-fetch("cards.json?v=11").then(r=>r.json()).then(d=>{BASE=d.cards; window.SNIPER=d.sniper; render();});
-function stats(){
- const c=cards(), players=[...new Set(c.map(x=>x.player))];
- const cost=c.reduce((a,x)=>a+(Number(x.paid)||0),0);
- const psa10=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10").length;
- const rook=c.filter(x=>x.year_type==="Rookie").length;
- const numbered=c.filter(x=>x.serial||/\/\d+/.test(x.parallel||"")).length;
- const crowns=c.filter(x=>x.crown).length;
- let score=Math.round(Math.min(100,55+(psa10/c.length)*18+(rook/c.length)*12+(numbered/c.length)*10+(crowns/c.length)*10));
- return {c,players,cost,psa10,rook,numbered,crowns,score};
+const $=s=>document.querySelector(s); let DATA, BASE=[], view="home", player=null, filter="All", modal=null;
+const localCards=()=>JSON.parse(localStorage.getItem("cv2_local")||"[]");
+const allCards=()=>[...BASE,...localCards()];
+const money=n=>"£"+Number(n||0).toLocaleString("en-GB",{maximumFractionDigits:0});
+const initials=p=>p.split(" ").map(x=>x[0]).join("").slice(0,2);
+fetch("cards.json?v=20").then(r=>r.json()).then(d=>{DATA=d;BASE=d.cards;render()});
+function normalized(){return allCards()}
+function calc(){
+ const c=normalized(), players=[...new Set(c.map(x=>x.player))], cost=c.reduce((a,x)=>a+(+x.paid||0),0), psa=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10").length, rook=c.filter(x=>x.year_type==="Rookie").length, num=c.filter(x=>x.serial||/\/\d+/.test(x.parallel||"")).length, crown=c.filter(x=>x.crown).length;
+ const score=Math.round(Math.min(99,58+(psa/c.length)*15+(rook/c.length)*10+(num/c.length)*8+(crown/c.length)*9));
+ return {c,players,cost,psa,rook,num,crown,score};
 }
-function topbar(){return `<div class=top><div><div class=eyebrow>Private Collection</div><div class=brand>Card Vault</div><div class=sub>Updated 22 Aug 2026</div></div><button class=iconbtn onclick="openSearch()">⌕</button></div>`}
-function bottom(){return `<div class=bottom>
-<button class="${view==="home"?"on":""}" onclick="go('home')"><b>⌂</b>Home</button>
-<button class="${view==="vault"||view==="player"?"on":""}" onclick="go('vault')"><b>◇</b>Vault</button>
-<button class="${view==="insights"?"on":""}" onclick="go('insights')"><b>◫</b>Insights</button>
-<button class="${view==="sniper"?"on":""}" onclick="go('sniper')"><b>◎</b>Sniper</button></div>`}
-window.go=v=>{view=v;player=null;render(); scrollTo(0,0)};
-window.openPlayer=p=>{player=p;view="player";render();scrollTo(0,0)};
-window.openCard=id=>{modal=cards().find(x=>x.id===id);render()};
-window.closeModal=()=>{modal=null;render()};
+function header(){return `<div class=top><div><div class=eyebrow>Collection intelligence</div><div class=brand>Card Vault</div><div class=sub>${DATA?.unique_holdings||0} unique spreadsheet holdings · source audited</div></div><button class=iconbtn onclick="openSearch()">⌕</button></div>`}
+function nav(){return `<div class=bottom><button class="${view==="home"?"on":""}" onclick="go('home')"><b>⌂</b>Home</button><button class="${view==="vault"||view==="player"?"on":""}" onclick="go('vault')"><b>◇</b>Vault</button><button class="${view==="insights"?"on":""}" onclick="go('insights')"><b>◫</b>Insights</button><button class="${view==="sniper"?"on":""}" onclick="go('sniper')"><b>◎</b>Sniper</button></div>`}
+window.go=v=>{view=v;player=null;modal=null;render();scrollTo(0,0)}; window.openPlayer=p=>{view="player";player=p;render();scrollTo(0,0)}; window.openCard=id=>{modal=allCards().find(x=>x.id===id);render()}; window.closeModal=()=>{modal=null;render()};
+function art(c,cls="art"){return `<div class="${cls}">${c.image?`<img src="${c.image}" alt="${c.player} ${c.parallel}">`:`<div class=monogram>${initials(c.player)}</div>`}${c.crown&&cls==="art"?`<div class=crownTag>★ CROWN JEWEL</div>`:""}</div>`}
 function home(){
- const s=stats(); const crown=s.c.filter(x=>x.crown).sort((a,b)=>(b.conviction||0)-(a.conviction||0)).slice(0,5);
- return `<div class=hero><div class=eyebrow>Portfolio quality</div><div class=score>${s.score}<small>/100</small></div><h2>${s.c.length} cards. ${s.crowns} crown jewels.</h2><div class=stats>
- <div class=stat><span>Cost basis</span><b>${fmt(s.cost)}</b></div><div class=stat><span>PSA 10s</span><b>${s.psa10}</b></div>
- <div class=stat><span>Rookie cards</span><b>${s.rook}</b></div><div class=stat><span>Numbered</span><b>${s.numbered}</b></div></div></div>
- <div class=sectionTitle><h3>Crown Jewels</h3><span>Swipe</span></div><div class=featuredRow>${crown.map((x,i)=>`<button class=feature onclick="openCard('${x.id}')"><div class=rank>#${i+1} • ${x.player}</div><h4>${x.parallel} ${x.card_no||""}</h4><p>${x.set} · ${x.grader?x.grader+" ":""}${x.grade}</p></button>`).join("")}</div>
- <div class=sectionTitle><h3>Collection</h3><span>${s.players.length} players</span></div><div class=playerGrid>${s.players.map(p=>{let pc=s.c.filter(x=>x.player===p);return `<button class=playerTile onclick="openPlayer('${p.replaceAll("'","\\'")}')"><small>${pc[0]?.sport||""}</small><b>${p}</b><span class=count>${pc.length}</span><small> cards</small></button>`}).join("")}</div>`;
+ const s=calc(), jewels=s.c.filter(x=>x.crown).sort((a,b)=>(b.conviction||0)-(a.conviction||0)||((a.importance||99)-(b.importance||99))).slice(0,6), by={};s.c.forEach(x=>by[x.player]=(by[x.player]||0)+1);
+ return `<div class=hero><div class=eyebrow>Portfolio quality score</div><div class=scoreLine><div class=score>${s.score}</div><div class=scoreLabel>/100<br>data-driven from grade, rookie mix,<br>scarcity and Crown Jewel exposure</div></div><h1>Built around premium rookies.</h1><p>Your collection is concentrated by design: flagship Yamal and Jude rookies, plus a smaller high-upside Cooper Flagg risk bucket.</p><div class=statGrid><div class=stat><span>Unique holdings</span><b>${DATA.unique_holdings}</b><div class=tiny>${DATA.spreadsheet_rows} spreadsheet rows</div></div><div class=stat><span>Cost basis</span><b>${money(s.cost)}</b></div><div class=stat><span>PSA 10</span><b>${s.psa}</b></div><div class=stat><span>Crown jewels</span><b>${s.crown}</b></div></div></div>
+ <div class=audit><b>Data audit</b><p>The master workbook contains ${DATA.spreadsheet_rows} rows, ${DATA.unique_holdings} unique physical holdings after removing one duplicate legacy Pink X-Fractor row, and ${DATA.legacy_records} legacy records that still need cert metadata. This is why earlier app counts were wrong.</p></div>
+ <div class=sectionHead><h2>Crown Jewels</h2><span>Swipe & tap</span></div><div class=carousel>${jewels.map(c=>`<button class=jewel onclick="openCard('${c.id}')">${art(c)}<div class=jewelBody><h3>${c.player} · ${c.parallel}</h3><p>${c.set} ${c.card_no||""}<br>${c.grader?c.grader+" ":""}${c.grade} · Conviction ${c.conviction}/10</p></div></button>`).join("")}</div>
+ <div class=sectionHead><h2>Players</h2><span>drill down</span></div><div class=playerGrid>${Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([p,n])=>{let pc=s.c.filter(x=>x.player===p),cb=pc.reduce((a,x)=>a+(+x.paid||0),0),cj=pc.filter(x=>x.crown).length;return `<button class=playerTile onclick="openPlayer('${p.replaceAll("'","\\'")}')"><small>${pc[0].sport}</small><b>${p}</b><span class=num>${n}</span><small> cards</small><div class=micro>${money(cb)} cost · ${cj} crown</div></button>`}).join("")}</div>`;
 }
+function row(c){return `<button class=cardRow onclick="openCard('${c.id}')"><div class=miniArt>${c.image?`<img src="${c.image}">`:`<span>${initials(c.player)}</span>`}</div><div><h3>${c.parallel} ${c.card_no||""}</h3><p>${c.player} · ${c.set}</p><p>${c.grader?c.grader+" "+c.grade:c.grade} ${c.serial?" · "+c.serial:""} · ${money(c.paid)}</p></div><span class="pill ${c.crown?"gold":""}">${c.crown?"★":"›"}</span></button>`}
 function vault(){
- const c=cards(); let filtered=c;
- if(activeFilter==="PSA 10") filtered=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10");
- if(activeFilter==="Rookie") filtered=c.filter(x=>x.year_type==="Rookie");
- if(activeFilter==="Numbered") filtered=c.filter(x=>x.serial||/\/\d+/.test(x.parallel||""));
- if(activeFilter==="Crown") filtered=c.filter(x=>x.crown);
- return `<input class=search placeholder="Search player, set, parallel…" oninput="searchVault(this.value)">
- <div class=chips>${["All","PSA 10","Rookie","Numbered","Crown"].map(x=>`<button class="chip ${activeFilter===x?"on":""}" onclick="filterVault('${x}')">${x}</button>`).join("")}</div>
- <div id=vaultList class=cardList>${filtered.map(cardRow).join("")}</div>`;
+ let c=allCards(); if(filter==="PSA 10")c=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10");if(filter==="Rookie")c=c.filter(x=>x.year_type==="Rookie");if(filter==="Numbered")c=c.filter(x=>x.serial||/\/\d+/.test(x.parallel||""));if(filter==="Crown")c=c.filter(x=>x.crown);
+ return `<input class=search placeholder="Search player, set, cert, parallel…" oninput="vaultSearch(this.value)"><div class=chips>${["All","PSA 10","Rookie","Numbered","Crown"].map(x=>`<button class="chip ${filter===x?"on":""}" onclick="setFilter('${x}')">${x}</button>`).join("")}</div><div id=vaultList class=list>${c.map(row).join("")}</div>`;
 }
-window.filterVault=x=>{activeFilter=x;render()};
-window.searchVault=q=>{q=q.toLowerCase(); $("#vaultList").innerHTML=cards().filter(x=>JSON.stringify(x).toLowerCase().includes(q)).map(cardRow).join("")};
-function initials(p){return p.split(" ").map(x=>x[0]).join("").slice(0,2)}
-function cardRow(x){return `<button class=cardRow onclick="openCard('${x.id}')"><div class=thumb>${initials(x.player)}</div><div><h4>${x.player} · ${x.parallel}</h4><p>${x.set} ${x.card_no||""}</p><p>${x.grader?x.grader+" "+x.grade:x.grade} ${x.serial?" · "+x.serial:""}</p></div><span class="pill ${x.crown?"crown":""}">${x.crown?"★":"›"}</span></button>`}
+window.setFilter=x=>{filter=x;render()}; window.vaultSearch=q=>{$("#vaultList").innerHTML=allCards().filter(x=>JSON.stringify(x).toLowerCase().includes(q.toLowerCase())).map(row).join("")}
 function playerPage(){
- let c=cards().filter(x=>x.player===player), cost=c.reduce((a,x)=>a+(x.paid||0),0), psa=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10").length;
- return `<button class=back onclick="go('vault')">← Vault</button><div class=sectionTitle><h3>${player}</h3><span>${c.length} cards</span></div>
- <div class=analyticsGrid><div class=insight><span>Cost basis</span><b>${fmt(cost)}</b></div><div class=insight><span>PSA 10</span><b>${psa}</b></div></div>
- <div class=cardList style="margin-top:14px">${c.sort((a,b)=>(a.importance||99)-(b.importance||99)).map(cardRow).join("")}</div>`;
+ let c=allCards().filter(x=>x.player===player).sort((a,b)=>(a.importance||99)-(b.importance||99)||((b.conviction||0)-(a.conviction||0))), cost=c.reduce((a,x)=>a+(+x.paid||0),0), psa=c.filter(x=>x.grader==="PSA"&&String(x.grade)==="10").length, crown=c.filter(x=>x.crown).length;
+ return `<button class=back onclick="go('vault')">← Vault</button><div class=playerHero><div class=eyebrow>${c[0]?.sport||""}</div><h1>${player}</h1><div class=sub>${c.length} cards ranked by importance and conviction</div><div class=metricRow><div class=metric><small>Cost</small><b>${money(cost)}</b></div><div class=metric><small>PSA 10</small><b>${psa}</b></div><div class=metric><small>Crown</small><b>${crown}</b></div></div></div><div class=sectionHead><h2>Card inventory</h2><span>tap for thesis</span></div><div class=list>${c.map(row).join("")}</div>`;
+}
+function insightFeed(){
+ const s=calc(), by={};s.c.forEach(x=>by[x.player]=(by[x.player]||0)+1); let sorted=Object.entries(by).sort((a,b)=>b[1]-a[1]); let top=s.c.filter(x=>x.crown).sort((a,b)=>(b.conviction||0)-(a.conviction||0))[0], missingCert=s.c.filter(x=>x.grader==="PSA"&&!x.cert).length, popKnown=s.c.filter(x=>x.population).length, legacy=s.c.filter(x=>/LEGACY/.test(x.id)).length;
+ return [
+  {k:"Portfolio pulse",h:`${sorted[0][0]} is your largest position`,p:`${sorted[0][1]} holdings make it the biggest card-count concentration. That is deliberate, but your next purchase should improve scarcity rather than add another similar base card.`,i:"Portfolio fit"},
+  {k:"Quality signal",h:`${s.psa} PSA 10 holdings anchor the collection`,p:`The grade profile is strong. Raw cards should mainly be reserved for genuinely scarce opportunities where grading upside compensates for condition risk.`,i:"Grade quality"},
+  {k:"Crown jewel",h:`${top.player}: ${top.parallel}`,p:`Conviction ${top.conviction}/10 and moat ${top.moat}/10. The spreadsheet thesis marks this as a cornerstone holding rather than a trading position.`,i:"High conviction"},
+  {k:"Data quality",h:`${missingCert} PSA records still lack a cert number`,p:`${legacy} are legacy workbook records and only ${popKnown} cards currently have a PSA population stored. PSA sync is the clearest next enrichment step.`,i:"Action needed"},
+  {k:"Scarcity",h:`${s.num} cards have explicit numbering or numbered parallels`,p:`Your best scarcity exposure sits in Jude numbered rookies and Flagg Hardwired 22/99. Those are structurally different from high-pop base rookies.`,i:"Moat"}
+ ];
 }
 function insights(){
- const s=stats(), by={}; s.c.forEach(x=>by[x.player]=(by[x.player]||0)+1); let max=Math.max(...Object.values(by));
- let top=[...s.c].sort((a,b)=>(b.conviction||0)-(a.conviction||0)||((b.moat||0)-(a.moat||0))).slice(0,3);
- return `<div class=hero><div class=eyebrow>Portfolio intelligence</div><h2>Strong rookie concentration with premium-grade bias.</h2><p class=sub>${Math.round(s.rook/s.c.length*100)}% rookie cards · ${Math.round(s.psa10/s.c.length*100)}% PSA 10 · ${s.numbered} numbered cards.</p></div>
- <div class=sectionTitle><h3>Player concentration</h3><span>${s.c.length} cards</span></div>${Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([p,n])=>`<div class=insight style="margin-bottom:9px"><span>${p}</span><b>${n} cards</b><div class=bar><i style="width:${n/max*100}%"></i></div></div>`).join("")}
- <div class=sectionTitle><h3>Highest conviction</h3></div><div class=cardList>${top.map(cardRow).join("")}</div>
- <div class=sectionTitle><h3>Data health</h3></div><div class=insight><span>Needs reconciliation</span><b>Wemby / Ohtani</b><p class=sub>Your current master workbook has empty player tabs for these. We should import them from PSA or your older workbook instead of inventing records.</p></div>`;
+ const s=calc(), feed=insightFeed(), rook=Math.round(s.rook/s.c.length*100), psa=Math.round(s.psa/s.c.length*100), num=Math.round(s.num/s.c.length*100), crown=Math.round(s.crown/s.c.length*100);
+ return `<div class=hero><div class=eyebrow>Collection intelligence</div><h1>Insights that explain the portfolio.</h1><p>These are generated from your spreadsheet fields: investment grade, conviction, moat, tier, rookie status, scarcity and the reason you bought each card.</p></div><div class=sectionHead><h2>Portfolio signals</h2><span>from master data</span></div><div class=insightGrid>
+ <div class=insight><small>Rookie exposure</small><b>${rook}%</b><div class=bar><i style="width:${rook}%"></i></div></div><div class=insight><small>PSA 10 share</small><b>${psa}%</b><div class=bar><i style="width:${psa}%"></i></div></div>
+ <div class=insight><small>Numbered / scarce</small><b>${num}%</b><div class=bar><i style="width:${num}%"></i></div></div><div class=insight><small>Crown jewel share</small><b>${crown}%</b><div class=bar><i style="width:${crown}%"></i></div></div></div>
+ <div class=sectionHead><h2>Intelligence feed</h2><span>news-style</span></div><div class=feed>${feed.map(x=>`<div class=feedItem><div class=kicker>${x.k}</div><h3>${x.h}</h3><p>${x.p}</p><span class=impact>${x.i}</span></div>`).join("")}</div>`;
 }
-function sniper(){return `<div class=hero><div class=eyebrow>Acquisition discipline</div><h2>Sniper</h2><p class=sub>Targets where we wait for price, scarcity and portfolio fit to align.</p></div><div class=sectionTitle><h3>Active targets</h3></div>${(window.SNIPER||[]).map(x=>`<div class=sniperCard><h4>${x.target}</h4><p>${x.priority} priority</p><div class=max>Max ${fmt(x.max)}</div></div>`).join("")}`}
-function detail(x){
- return `<div class=sheetWrap onclick="closeModal()"><div class=sheet onclick="event.stopPropagation()"><button class=iconbtn style="float:right" onclick="closeModal()">✕</button>
- <div class=eyebrow>${x.crown?"Crown Jewel":"Owned"}</div><h2>${x.player}</h2><div class=sub>${x.set}</div>
- <div class=detailHero>${initials(x.player)}</div><h3>${x.parallel} ${x.card_no||""}</h3>
- <div class=kv><div><small>Grade</small><b>${x.grader?x.grader+" ":""}${x.grade}</b></div><div><small>Paid</small><b>${fmt(x.paid)}</b></div><div><small>Serial</small><b>${x.serial||"—"}</b></div><div><small>Year</small><b>${x.year_type}</b></div><div><small>Conviction</small><b>${x.conviction||"—"}/10</b></div><div><small>Cert</small><b>${x.cert||"—"}</b></div></div>
- <p class=sub style="margin-top:14px">${x.notes||""}</p><div class=actions><button onclick="editCustom('${x.id}')">Edit</button>${x.id.startsWith("CUSTOM")?`<button class=danger onclick="deleteCustom('${x.id}')">Delete</button>`:""}</div></div></div>`;
-}
-window.addCard=()=>{modal={__add:true};render()};
-function addSheet(){return `<div class=sheetWrap onclick="closeModal()"><form class=sheet onclick="event.stopPropagation()" onsubmit="saveAdd(event)"><button type=button class=iconbtn style="float:right" onclick="closeModal()">✕</button><div class=eyebrow>Add to collection</div><h2>New Card</h2>
-<label>Player</label><input name=player required><label>Set</label><input name=set required><label>Card / Parallel</label><input name=parallel required><label>Grade</label><input name=grade placeholder="PSA 10 or Raw"><label>Purchase price (£)</label><input name=paid type=number step=.01><label>Serial number</label><input name=serial placeholder="22/99"><button class=save>Add card</button></form></div>`}
-window.saveAdd=e=>{e.preventDefault();let f=new FormData(e.target), arr=custom();arr.push({id:"CUSTOM-"+Date.now(),player:f.get("player"),sport:"",set:f.get("set"),card_no:"",parallel:f.get("parallel"),year_type:"Rookie",grade:f.get("grade")||"Raw",grader:(f.get("grade")||"").toUpperCase().includes("PSA")?"PSA":"",cert:"",paid:Number(f.get("paid")||0),status:"Hold",tier:"Growth",investment_grade:"",conviction:7,moat:6,crown:false,serial:f.get("serial"),notes:"Added in Card Vault"});localStorage.setItem("cv_custom",JSON.stringify(arr));modal=null;render()}
-window.deleteCustom=id=>{let arr=custom().filter(x=>x.id!==id);localStorage.setItem("cv_custom",JSON.stringify(arr));modal=null;render()}
-window.editCustom=id=>{alert("Core master records are read-only in this version. Locally added cards can be deleted/re-added. GitHub/PSA sync comes next.")};
-window.openSearch=()=>{view="vault";render();setTimeout(()=>$(".search")?.focus(),50)}
-function render(){let content=view==="home"?home():view==="vault"?vault():view==="player"?playerPage():view==="insights"?insights():sniper();$("#app").innerHTML=`<div class=shell>${topbar()}${content}<button class=fab onclick="addCard()">+</button>${bottom()}</div>`+(modal?(modal.__add?addSheet():detail(modal)):"")}
+function sniper(){return `<div class=hero><div class=eyebrow>Acquisition discipline</div><h1>Sniper board</h1><p>Targets are intentionally narrow: buy only when a card improves scarcity, flagship quality or your player thesis.</p></div><div class=sectionHead><h2>Active targets</h2></div>${DATA.sniper.map(x=>`<div class=sniper><h3>${x.target}</h3><p>${x.reason}</p><div class=max>Max ${money(x.max)} · ${x.priority}</div></div>`).join("")}`}
+function detail(c){return `<div class=modalWrap onclick="closeModal()"><div class=sheet onclick="event.stopPropagation()"><button class=iconbtn style="float:right" onclick="closeModal()">✕</button><div class=eyebrow>${c.crown?"Crown Jewel":c.tier+" holding"}</div><h1>${c.player}</h1><div class=sub>${c.set}</div><div class=bigArt>${c.image?`<img src="${c.image}">`:`<div class=monogram>${initials(c.player)}</div>`}</div>${c.image_reference?`<div class=ref>Reference artwork from your uploaded screenshot; owned record is tracked separately below.</div>`:""}<h2>${c.parallel} ${c.card_no||""}</h2>
+ <div class=detailGrid><div><small>Grade</small><b>${c.grader?c.grader+" ":""}${c.grade}</b></div><div><small>Paid</small><b>${money(c.paid)}</b></div><div><small>Year</small><b>${c.year_type}</b></div><div><small>Tier</small><b>${c.tier}</b></div><div><small>Investment grade</small><b>${c.investment_grade}</b></div><div><small>Conviction / moat</small><b>${c.conviction} / ${c.moat}</b></div><div><small>Serial</small><b>${c.serial||"—"}</b></div><div><small>PSA cert</small><b>${c.cert||"—"}</b></div><div><small>PSA pop</small><b>${c.population||"—"}</b></div><div><small>Target sell</small><b>${c.target?money(c.target):"—"}</b></div></div>
+ <div class=thesis><small>Why it belongs</small><p>${c.why||c.thesis||"No thesis recorded yet."}</p>${c.thesis?`<p>${c.thesis}</p>`:""}${c.notes?`<p>${c.notes}</p>`:""}</div></div></div>`}
+window.addCard=()=>{modal={add:true};render()}; function addForm(){return `<div class=modalWrap onclick="closeModal()"><form class="sheet form" onclick="event.stopPropagation()" onsubmit="saveLocal(event)"><button type=button class=iconbtn style="float:right" onclick="closeModal()">✕</button><div class=eyebrow>Local add</div><h1>Add card</h1><div class=sub>Saved on this iPhone until cloud sync is connected.</div><label>Player</label><input name=player required><label>Set</label><input name=set required><label>Parallel / card</label><input name=parallel required><label>Grade</label><input name=grade placeholder="PSA 10 / Raw"><label>Paid (£)</label><input name=paid type=number step=.01><label>Serial</label><input name=serial placeholder="22/99"><button class=save>Add to Vault</button></form></div>`}
+window.saveLocal=e=>{e.preventDefault();let f=new FormData(e.target),a=localCards();a.push({id:"LOCAL-"+Date.now(),player:f.get("player"),sport:"",set:f.get("set"),card_no:"",parallel:f.get("parallel"),year_type:"Rookie",grade:f.get("grade")||"Raw",grader:(f.get("grade")||"").toUpperCase().includes("PSA")?"PSA":"",cert:"",paid:+f.get("paid")||0,status:"Hold",tier:"Growth",investment_grade:"",conviction:7,moat:6,importance:null,crown:false,population:null,serial:f.get("serial"),target:null,why:"Added locally",thesis:"",notes:""});localStorage.setItem("cv2_local",JSON.stringify(a));modal=null;render()}
+window.openSearch=()=>{view="vault";render();setTimeout(()=>$(".search")?.focus(),40)}
+function render(){let content=view==="home"?home():view==="vault"?vault():view==="player"?playerPage():view==="insights"?insights():sniper();$("#app").innerHTML=`<div class=shell>${header()}${content}<button class=fab onclick="addCard()">+</button>${nav()}</div>`+(modal?(modal.add?addForm():detail(modal)):"")}
