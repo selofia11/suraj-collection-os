@@ -1,40 +1,52 @@
 {
   "cards": [
     {
+      "id": "lamine-sapphire",
       "player": "Lamine Yamal",
-      "card": "Sapphire Image Variation",
+      "title": "Sapphire Image Variation",
       "grade": "PSA 10",
-      "details": "Crown Jewel"
+      "rarity": "Crown Jewel",
+      "status": "Owned"
     },
     {
+      "id": "jude-night",
       "player": "Jude Bellingham",
-      "card": "Night Vision /225",
+      "title": "Night Vision Green /225",
       "grade": "PSA 10",
-      "details": "Topps Chrome UCL"
+      "rarity": "Rare",
+      "status": "Owned"
     },
     {
+      "id": "flagg-hardwired",
       "player": "Cooper Flagg",
-      "card": "Hardwired Purple 22/99",
+      "title": "Hardwired Purple 22/99",
       "grade": "Raw",
-      "details": "Rookie"
+      "rarity": "22/99",
+      "status": "Owned"
     },
     {
+      "id": "flagg-destiny",
       "player": "Cooper Flagg",
-      "card": "Destiny",
+      "title": "Topps Chrome Destiny",
       "grade": "PSA 10",
-      "details": "Insert"
+      "rarity": "Insert",
+      "status": "Owned"
     },
     {
+      "id": "flagg-holiday",
       "player": "Cooper Flagg",
-      "card": "Holiday Base RC",
+      "title": "Holiday Base RC",
       "grade": "Raw",
-      "details": "Base Rookie"
+      "rarity": "Base Rookie",
+      "status": "Owned"
     },
     {
+      "id": "wemby-whitehot",
       "player": "Victor Wembanyama",
-      "card": "White Hot Rookies",
+      "title": "White Hot Rookies",
       "grade": "PSA 10",
-      "details": "Optic"
+      "rarity": "Optic",
+      "status": "Owned"
     }
   ]
 }

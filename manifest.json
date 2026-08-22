@@ -1,1 +1,6 @@
-{"name": "Card Vault", "short_name": "CardVault", "display": "standalone", "start_url": "."}
+{
+  "name": "Card Vault",
+  "short_name": "Vault",
+  "display": "standalone",
+  "start_url": "."
+}
