@@ -1,52 +1,130 @@
 {
   "cards": [
     {
-      "id": "lamine-sapphire",
       "player": "Lamine Yamal",
-      "title": "Sapphire Image Variation",
+      "title": "Wonderkids SP",
       "grade": "PSA 10",
-      "rarity": "Crown Jewel",
-      "status": "Owned"
+      "rarity": "SP"
     },
     {
-      "id": "jude-night",
+      "player": "Lamine Yamal",
+      "title": "UEFA Euro Sapphire",
+      "grade": "PSA 10",
+      "rarity": "Sapphire"
+    },
+    {
+      "player": "Lamine Yamal",
+      "title": "Donruss Rookie Kings",
+      "grade": "PSA 10",
+      "rarity": "Insert"
+    },
+    {
+      "player": "Lamine Yamal",
+      "title": "European Nights Rookie",
+      "grade": "Raw",
+      "rarity": "Rookie"
+    },
+    {
+      "player": "Jude Bellingham",
+      "title": "Finest Bundesliga Purple Wave Rookie",
+      "grade": "PSA 10",
+      "rarity": "Purple Wave"
+    },
+    {
+      "player": "Jude Bellingham",
+      "title": "Stadium Club Chrome UCL Rookie",
+      "grade": "PSA 10",
+      "rarity": "Rookie"
+    },
+    {
+      "player": "Jude Bellingham",
+      "title": "Aqua Refractor /199",
+      "grade": "PSA 10",
+      "rarity": "/199"
+    },
+    {
+      "player": "Jude Bellingham",
+      "title": "Pink Refractor",
+      "grade": "PSA 10",
+      "rarity": "Pink"
+    },
+    {
       "player": "Jude Bellingham",
       "title": "Night Vision Green /225",
       "grade": "PSA 10",
-      "rarity": "Rare",
-      "status": "Owned"
+      "rarity": "/225"
     },
     {
-      "id": "flagg-hardwired",
       "player": "Cooper Flagg",
       "title": "Hardwired Purple 22/99",
       "grade": "Raw",
-      "rarity": "22/99",
-      "status": "Owned"
+      "rarity": "22/99"
     },
     {
-      "id": "flagg-destiny",
       "player": "Cooper Flagg",
       "title": "Topps Chrome Destiny",
       "grade": "PSA 10",
-      "rarity": "Insert",
-      "status": "Owned"
+      "rarity": "Insert"
     },
     {
-      "id": "flagg-holiday",
       "player": "Cooper Flagg",
       "title": "Holiday Base RC",
       "grade": "Raw",
-      "rarity": "Base Rookie",
-      "status": "Owned"
+      "rarity": "Base"
     },
     {
-      "id": "wemby-whitehot",
+      "player": "Victor Wembanyama",
+      "title": "Topps Cosmic Chrome Rookie",
+      "grade": "PSA 10",
+      "rarity": "Cosmic"
+    },
+    {
+      "player": "Victor Wembanyama",
+      "title": "Origins Euphoria",
+      "grade": "PSA 10",
+      "rarity": "Insert"
+    },
+    {
       "player": "Victor Wembanyama",
       "title": "White Hot Rookies",
       "grade": "PSA 10",
-      "rarity": "Optic",
-      "status": "Owned"
+      "rarity": "Optic"
+    },
+    {
+      "player": "Victor Wembanyama",
+      "title": "Premium Stock Anti Gravity",
+      "grade": "Raw",
+      "rarity": "Insert"
+    },
+    {
+      "player": "Victor Wembanyama",
+      "title": "Topps Now Rookie of the Year",
+      "grade": "Raw",
+      "rarity": "Topps Now"
+    },
+    {
+      "player": "Bo Nix",
+      "title": "Prizm Draft Picks Red Ice",
+      "grade": "PSA 10",
+      "rarity": "Red Ice"
+    },
+    {
+      "player": "Shohei Ohtani",
+      "title": "Topps Now #722",
+      "grade": "PSA 10",
+      "rarity": "Topps Now"
+    },
+    {
+      "player": "Cooper Flagg",
+      "title": "Portfolio Placeholder",
+      "grade": "Raw",
+      "rarity": "Reserved"
+    },
+    {
+      "player": "Jude Bellingham",
+      "title": "Portfolio Placeholder",
+      "grade": "PSA 10",
+      "rarity": "Reserved"
     }
   ]
 }
