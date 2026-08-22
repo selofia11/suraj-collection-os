@@ -1,2 +1,1 @@
-# Suraj Collection OS
-Starter app.
+# Card Vault v3

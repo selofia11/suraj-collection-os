@@ -1,9 +1,1 @@
-{
-  "name": "Suraj Collection OS",
-  "short_name": "Vault",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#08111f",
-  "theme_color": "#08111f",
-  "icons": []
-}
+{"name": "Card Vault", "short_name": "CardVault", "display": "standalone", "start_url": ".", "background_color": "#07111f", "theme_color": "#07111f"}
