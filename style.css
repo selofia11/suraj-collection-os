@@ -1,1 +1,10 @@
-body{margin:0;background:#07111f;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}#app{padding:20px 20px 90px}.hero,.card,.metric{background:#0d1728;border:1px solid #23406f;border-radius:18px;padding:16px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric b{font-size:28px;color:#d4af37}nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:92%;display:grid;grid-template-columns:repeat(4,1fr);background:#0d1728;border:1px solid #23406f;border-radius:22px;padding:8px}nav button{background:none;border:none;color:#fff;padding:10px;border-radius:12px}.on{background:#1e40af}
+body{margin:0;background:#050912;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+#app{padding:18px 18px 92px}.top{display:flex;justify-content:space-between;align-items:center}
+h1{margin:0;font-size:34px}.sub{color:#9aa4b2}.glass{background:linear-gradient(180deg,#101826,#0b1220);border:1px solid #22304a;border-radius:22px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{padding:14px;border-radius:18px;background:#0d1524;border:1px solid #1f2d46}.metric b{font-size:28px;color:#d4af37}
+.player,.card{background:#0d1524;border:1px solid #1f2d46;border-radius:18px;padding:16px;margin:12px 0}.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#183258;font-size:12px}.hero{margin:16px 0}
+nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:92%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#0d1524;border:1px solid #22304a;border-radius:22px;padding:8px}
+nav button{background:none;border:none;color:#fff;padding:10px;border-radius:12px}.on{background:#1e40af}button{cursor:pointer}
+.search{width:100%;padding:14px;border-radius:16px;background:#0d1524;border:1px solid #22304a;color:#fff}
+.fab{position:fixed;right:22px;bottom:92px;width:56px;height:56px;border-radius:50%;background:#d4af37;color:#000;font-size:30px;border:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:20px}.sheet{width:100%;max-width:420px}.close{float:right}

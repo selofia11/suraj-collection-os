@@ -1,130 +1,116 @@
 {
   "cards": [
     {
+      "id": "lam1",
+      "player": "Lamine Yamal",
+      "title": "Sapphire Image Variation",
+      "grade": "PSA 10",
+      "rarity": "Crown Jewel",
+      "paid": 630
+    },
+    {
+      "id": "lam2",
       "player": "Lamine Yamal",
       "title": "Wonderkids SP",
       "grade": "PSA 10",
-      "rarity": "SP"
+      "rarity": "SP",
+      "paid": 220
     },
     {
+      "id": "lam3",
       "player": "Lamine Yamal",
       "title": "UEFA Euro Sapphire",
       "grade": "PSA 10",
-      "rarity": "Sapphire"
+      "rarity": "Sapphire",
+      "paid": 180
     },
     {
-      "player": "Lamine Yamal",
-      "title": "Donruss Rookie Kings",
-      "grade": "PSA 10",
-      "rarity": "Insert"
-    },
-    {
+      "id": "lam4",
       "player": "Lamine Yamal",
       "title": "European Nights Rookie",
       "grade": "Raw",
-      "rarity": "Rookie"
+      "rarity": "Rookie",
+      "paid": 45
     },
     {
-      "player": "Jude Bellingham",
-      "title": "Finest Bundesliga Purple Wave Rookie",
-      "grade": "PSA 10",
-      "rarity": "Purple Wave"
-    },
-    {
-      "player": "Jude Bellingham",
-      "title": "Stadium Club Chrome UCL Rookie",
-      "grade": "PSA 10",
-      "rarity": "Rookie"
-    },
-    {
-      "player": "Jude Bellingham",
-      "title": "Aqua Refractor /199",
-      "grade": "PSA 10",
-      "rarity": "/199"
-    },
-    {
-      "player": "Jude Bellingham",
-      "title": "Pink Refractor",
-      "grade": "PSA 10",
-      "rarity": "Pink"
-    },
-    {
+      "id": "jud1",
       "player": "Jude Bellingham",
       "title": "Night Vision Green /225",
       "grade": "PSA 10",
-      "rarity": "/225"
+      "rarity": "/225",
+      "paid": 850
     },
     {
+      "id": "jud2",
+      "player": "Jude Bellingham",
+      "title": "Aqua Refractor /199",
+      "grade": "PSA 10",
+      "rarity": "/199",
+      "paid": 310
+    },
+    {
+      "id": "jud3",
+      "player": "Jude Bellingham",
+      "title": "Pink Refractor",
+      "grade": "PSA 10",
+      "rarity": "Pink",
+      "paid": 250
+    },
+    {
+      "id": "f1",
       "player": "Cooper Flagg",
       "title": "Hardwired Purple 22/99",
       "grade": "Raw",
-      "rarity": "22/99"
+      "rarity": "22/99",
+      "paid": 115
     },
     {
+      "id": "f2",
       "player": "Cooper Flagg",
       "title": "Topps Chrome Destiny",
       "grade": "PSA 10",
-      "rarity": "Insert"
+      "rarity": "Insert",
+      "paid": 302
     },
     {
+      "id": "f3",
       "player": "Cooper Flagg",
       "title": "Holiday Base RC",
       "grade": "Raw",
-      "rarity": "Base"
+      "rarity": "Base",
+      "paid": 25
     },
     {
-      "player": "Victor Wembanyama",
-      "title": "Topps Cosmic Chrome Rookie",
-      "grade": "PSA 10",
-      "rarity": "Cosmic"
-    },
-    {
-      "player": "Victor Wembanyama",
-      "title": "Origins Euphoria",
-      "grade": "PSA 10",
-      "rarity": "Insert"
-    },
-    {
+      "id": "w1",
       "player": "Victor Wembanyama",
       "title": "White Hot Rookies",
       "grade": "PSA 10",
-      "rarity": "Optic"
+      "rarity": "Optic",
+      "paid": 0
     },
     {
+      "id": "w2",
       "player": "Victor Wembanyama",
-      "title": "Premium Stock Anti Gravity",
-      "grade": "Raw",
-      "rarity": "Insert"
+      "title": "Topps Cosmic Chrome",
+      "grade": "PSA 10",
+      "rarity": "Cosmic",
+      "paid": 0
     },
     {
-      "player": "Victor Wembanyama",
-      "title": "Topps Now Rookie of the Year",
-      "grade": "Raw",
-      "rarity": "Topps Now"
-    },
-    {
+      "id": "bo",
       "player": "Bo Nix",
       "title": "Prizm Draft Picks Red Ice",
       "grade": "PSA 10",
-      "rarity": "Red Ice"
+      "rarity": "Red Ice",
+      "paid": 0
     },
     {
+      "id": "sho",
       "player": "Shohei Ohtani",
       "title": "Topps Now #722",
       "grade": "PSA 10",
-      "rarity": "Topps Now"
-    },
-    {
-      "player": "Cooper Flagg",
-      "title": "Portfolio Placeholder",
-      "grade": "Raw",
-      "rarity": "Reserved"
-    },
-    {
-      "player": "Jude Bellingham",
-      "title": "Portfolio Placeholder",
-      "grade": "PSA 10",
-      "rarity": "Reserved"
+      "rarity": "Topps Now",
+      "paid": 0
     }
   ]
 }
