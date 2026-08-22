@@ -1,5 +1,5 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "source": "Suraj_Master_Collection_2026-08-22_Bulletproof_v1.xlsx",
   "spreadsheet_rows": 26,
   "unique_holdings": 33,
@@ -1003,19 +1003,22 @@
       "target": "Lamine 2023-24 Sapphire / numbered flagship rookie PSA 10",
       "max": 900,
       "priority": "High",
-      "reason": "Adds scarcity without diluting the Yamal thesis."
+      "reason": "Adds scarcity without diluting the Yamal thesis.",
+      "ebay_query": "Lamine 2023-24 Sapphire / numbered flagship rookie PSA 10"
     },
     {
       "target": "Jude 2020 numbered rookie PSA 10 /99 or lower",
       "max": 400,
       "priority": "High",
-      "reason": "Improves scarcity profile versus year-two color."
+      "reason": "Improves scarcity profile versus year-two color.",
+      "ebay_query": "Jude 2020 numbered rookie PSA 10 /99 or lower"
     },
     {
       "target": "Cooper Flagg flagship numbered rookie /75 or lower",
       "max": 225,
       "priority": "High",
-      "reason": "Raw rare risk bucket; only buy when price leaves grading upside."
+      "reason": "Raw rare risk bucket; only buy when price leaves grading upside.",
+      "ebay_query": "Cooper Flagg flagship numbered rookie /75 or lower"
     }
   ],
   "name": "Suraj\u2019s Card Vault",
@@ -1040,5 +1043,6 @@
       "reason": "Raw rare risk bucket; only buy when price leaves grading upside."
     }
   ],
-  "source_note": "Master workbook plus user-confirmed scans through 23 Aug 2026."
+  "source_note": "Master workbook plus user-confirmed scans through 23 Aug 2026.",
+  "live_deals": []
 }
