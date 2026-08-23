@@ -1,17 +1,14 @@
-Suraj’s Card Vault 2.6 RECOVERY
+Suraj’s Card Vault 2.4.1 FIX
 
-Built from the last known-working 2.4.1 release rather than patching the broken 2.5 line.
+This is a corrective release for 2.4.
 
-- 29/33 user card photos are included as lightweight root thumbnails.
-- Images are optional: if a thumbnail is missing or fails, the app falls back to initials instead of crashing.
-- Gallery/List toggle in Vault.
-- Working filters including Raw.
-- Expand all / Collapse all in List view.
-- Player visual dashboards.
-- Crown Jewels use real thumbnails where available.
-- Vault Score and Top Holdings insight.
-- Sniper retains eBay search.
-- Add Card and GitHub export remain.
+Fixes:
+- Expand all / Collapse all controls now actually render in Vault.
+- Home Crown Jewels use the new vertical list.
+- Sniper Core Targets includes eBay search links and Live Deals.
+- Build number "2.4.1" is visible under the app title so you can confirm the new files loaded.
+- index.html clears older service workers/caches and loads version-busted CSS/JS to prevent the installed iPhone app showing stale code.
 
-Upload ALL files in the ZIP to the GitHub repo root.
-You should see "build 2.6" under the title.
+Upload ALL files to the GitHub repo root, preserving assets/.
+After GitHub Pages deploys, fully close and reopen the Home Screen app once.
+You should see "build 2.4.1" under Suraj’s Card Vault.
